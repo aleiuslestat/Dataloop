@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+<h1>Propietarios</h1>
+<br/><br/>
+<table class="table table-striped">
+{% for Vivienda in propietarios_lista %}
+<tr> 
+    <td>
+<a href="{% url 'det-propietario' Vivienda.numero %}"> Casa {{Vivienda.numero }} </a>  <br/>
+    </td>
+</tr>
+{% endfor %}
+</table>
+</center>
+
+{% endblock %}

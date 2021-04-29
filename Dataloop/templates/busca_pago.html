@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+<h1>Busca Pagos aplicados por casa</h1>
+<br/><br/>
+<form class="d-flex" method="POST" action="{% url 'find-pagos' %}">
+    {% csrf_token %}
+    <input class="form-control me-2" type="search" placeholder="Casa" aria-label="search" name="buscando"> 
+    <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+</form>
+{% if mensaje %}
+<br/>{{mensaje}} 
+{% endif %}
+
+<br/><br/>
+{% if valido %}
+<h1>Pagos aplicados de casa {{ buscando }} </h1>
+<table class="table table-striped table-hover" >
+    <thead>
+        <tr>
+          <th scope="col">Mes</th>
+          <th scope="col">Monto</th>
+          <th scope="col">Fecha Pago</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for recibo  in recibos  %}
+    <tr >
+        <td  scope="row">{{recibo.mes }} </td>
+        <td  scope="row">$ {{recibo.monto }} </td>
+        <td  scope="row">{{recibo.fecha_pago }} </td>
+        <td  scope="row"><a href="{% url 'mod-pago' recibo.id %}"> Editar </a>  </td>
+        <td  scope="row"><a href="{% url 'del-pago' recibo.id %}"> Borrar </a>  </td>
+    </tr>
+{% endfor %}
+    </tbody>
+
+
+
+</table>
+{% else %}
+<h1>Sin datos a consultar</h1>
+{% endif %}
+
+</center>
+
+{% endblock %}

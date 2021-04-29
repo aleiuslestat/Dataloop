@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+<h1>Aplicar Pago </h1>
+<br/><br/>
+{% if enviado %}
+       {{ mensaje }}
+{% else %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Registrar" class="btn btn-success">
+</form>
+{% endif %}
+</center>
+
+{% endblock %}

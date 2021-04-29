@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+<h1>Pagos</h1>
+<br/><br/>
+<table class="table table-striped">
+
+<tr> 
+    <td>
+        <a href="{% url 'aplicar-pago' %}"> Aplicar pago </a>  <br/>
+    </td>
+    <td>
+        <a href="{% url 'find-pagos' %}"> Busca pagos por Casa </a>  <br/>
+    </td>
+</tr>
+</table>
+</center>
+
+{% endblock %}

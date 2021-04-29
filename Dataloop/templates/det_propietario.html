@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+<h1>Propietario</h1>
+<br/><br/>
+{{propietario.numero }} 
+{{propietario.nombres }} 
+{{propietario.apellido_pat }} 
+{{propietario.apellido_mat }}<br/>
+<a href="{% url 'mod-pago' propietario.numero %}"> Editar </a>  <br/>
+<a href="{% url 'del-pago' propietario.numero %}"> Borrar </a>  <br/>
+        {% csrf_token %}
+</center>
+
+{% endblock %}

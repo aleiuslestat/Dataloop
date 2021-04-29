@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+<h1>Agregar Propietario</h1>
+<br/><br/>
+{% if enviado %}
+      Se ha creado nueva vivienda
+{% else %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Registrar" class="btn btn-success">
+</form>
+{% endif %}
+</center>
+
+{% endblock %}

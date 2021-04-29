@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+<h1>Propietarios</h1>
+<br/><br/>
+<table class="table table-striped">
+
+<tr> 
+    <td>
+        <a href="{% url 'add-propietario' %}"> Agregar Propietarios </a>  <br/>
+    </td>
+    <td>
+        <a href="{% url 'list-propietario' %}"> Consulta todos los Propietarios registrados </a>  <br/>
+    </td>
+    <td>
+        <a href="{% url 'find-propietario' %}"> Buscar Propietarios </a>  <br/>
+    </td>
+
+</tr>
+</table>
+</center>
+
+{% endblock %}
