@@ -8,8 +8,8 @@
 {{propietario.nombres }} 
 {{propietario.apellido_pat }} 
 {{propietario.apellido_mat }}<br/>
-<a href="{% url 'mod-pago' propietario.numero %}"> Editar </a>  <br/>
-<a href="{% url 'del-pago' propietario.numero %}"> Borrar </a>  <br/>
+<a href="{% url 'mod-propietario' propietario.numero %}"> Editar </a>  <br/>
+<a href="{% url 'del-propietario' propietario.numero %}"> Borrar </a>  <br/>
         {% csrf_token %}
 </center>
 
